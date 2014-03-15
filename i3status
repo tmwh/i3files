@@ -1,0 +1,9 @@
+#!/bin/sh
+# shell scipt to prepend i3status output with some custom stuff
+
+i3status --config ~/.i3/status.conf | while :
+do
+    read line
+    LG=$(~/.i3/utilities/xkb-switch)
+    echo "$LG | $line" || exit 1
+done
